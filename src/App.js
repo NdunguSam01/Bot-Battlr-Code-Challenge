@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import BotCollection from './components/BotCollection';
 
 function App() 
 {
@@ -26,7 +27,7 @@ function App()
 
   return (
     <>
-      <h1>My Bot Collection</h1>
+      <BotCollection bots={botCollection} addBotToArmy={addBotToArmy}/>
     </>
   );
 }
