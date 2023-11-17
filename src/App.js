@@ -20,9 +20,9 @@ function App()
   //Function to capture the clicked bot and add it to the myBotArmy state
   const addBotToArmy = bot =>
   {
-    const armyFilter=myBotArmy.find(myBot => myBot.id === bot.id)
+    const armyFind=myBotArmy.find(myBot => myBot.id === bot.id)
 
-    if(!armyFilter)
+    if(!armyFind)
     {
       //Updating the myBotArmy state
       setMyBotArmy([
@@ -36,9 +36,19 @@ function App()
     }
   }
 
+  //Function to remove bot from army
+  const removeFromArmy = bot =>
+  {
+    //Filtering through the myBotArmy variable and returning all elements that are not equal to the bot passed in
+    const armyFilter=myBotArmy.filter(army => army.id !== bot.id)
+
+    //Updating the state to equal the value of the filtered elements
+    setMyBotArmy(armyFilter)
+  }
+
   return (
     <>
-      <Army myBotArmy={myBotArmy}/>
+      <Army myBotArmy={myBotArmy} removeFromArmy={removeFromArmy}/>
       <BotCollection bots={botCollection} addBotToArmy={addBotToArmy}/>
     </>
   );

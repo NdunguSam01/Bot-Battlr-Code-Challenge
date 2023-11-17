@@ -1,11 +1,11 @@
-const Army = ({myBotArmy}) => 
+const Army = ({myBotArmy , removeFromArmy}) => 
 {
     const botData=myBotArmy.map(bot=>
     {
         let {id, name, health, damage, armor, bot_class, catchphrase, avatar_url } = bot
         
         return(
-            <div key={id} className="child-flex">
+            <div key={id} className="child-flex" onClick={()=> removeFromArmy(bot)}>
                 <img src={avatar_url} alt={name} />
                 <p>Name: {name}</p>
                 <p>Health: {health}</p>
@@ -13,7 +13,7 @@ const Army = ({myBotArmy}) =>
                 <p>Armor: {armor}</p>
                 <p>Bot Class: {bot_class}</p>
                 <p>Catchphrase: {catchphrase}</p>
-                <button>X</button>
+                <button title="Click to delete from ">X</button>
             </div>
         )
         
