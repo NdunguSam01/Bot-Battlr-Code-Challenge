@@ -1,5 +1,3 @@
-import Bot from "./Bot"
-
 const Army = ({myBotArmy}) => 
 {
     const botData=myBotArmy.map(bot=>
@@ -7,7 +5,16 @@ const Army = ({myBotArmy}) =>
         let {id, name, health, damage, armor, bot_class, catchphrase, avatar_url } = bot
         
         return(
-            <Bot key={id} id={id} name={name} health={health} damage={damage} armor={armor} bot_class={bot_class} catchphrase={catchphrase} avatar_url={avatar_url}/>
+            <div key={id} className="child-flex">
+                <img src={avatar_url} alt={name} />
+                <p>Name: {name}</p>
+                <p>Health: {health}</p>
+                <p>Damage: {damage}</p>
+                <p>Armor: {armor}</p>
+                <p>Bot Class: {bot_class}</p>
+                <p>Catchphrase: {catchphrase}</p>
+                <button>X</button>
+            </div>
         )
         
     })

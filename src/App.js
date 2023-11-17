@@ -20,11 +20,20 @@ function App()
   //Function to capture the clicked bot and add it to the myBotArmy state
   const addBotToArmy = bot =>
   {
-    //Updating the myBotArmy state
-    setMyBotArmy([
-      ...myBotArmy,
-      bot
-    ])
+    const armyFilter=myBotArmy.find(myBot => myBot.id === bot.id)
+
+    if(!armyFilter)
+    {
+      //Updating the myBotArmy state
+      setMyBotArmy([
+        ...myBotArmy,
+        bot
+      ])
+    }
+    else
+    {
+     alert("Bot exists in your bot collection")
+    }
   }
 
   return (
