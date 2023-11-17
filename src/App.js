@@ -46,10 +46,28 @@ function App()
     setMyBotArmy(armyFilter)
   }
 
+  //Function to delete bot
+  const deleteBot = deletedBot =>
+  {
+    //Making a delete request to the server
+
+    fetch(`http://localhost:3001/bots/${deletedBot.id}`,
+      {
+        method: "DELETE",
+      })
+      .then(response => response.json())
+      .then(()=>
+      {
+        const botFilter=botCollection.filter(bot => bot.id !== deletedBot.id)
+        setBotCollections(botFilter)
+        removeFromArmy(deletedBot)
+      })
+  }
+
   return (
     <>
       <Army myBotArmy={myBotArmy} removeFromArmy={removeFromArmy}/>
-      <BotCollection bots={botCollection} addBotToArmy={addBotToArmy}/>
+      <BotCollection bots={botCollection} addBotToArmy={addBotToArmy} deleteBot={deleteBot}/>
     </>
   );
 }

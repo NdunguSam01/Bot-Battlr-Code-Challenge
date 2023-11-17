@@ -13,7 +13,6 @@ const Army = ({myBotArmy , removeFromArmy}) =>
                 <p>Armor: {armor}</p>
                 <p>Bot Class: {bot_class}</p>
                 <p>Catchphrase: {catchphrase}</p>
-                <button title="Click to delete from ">X</button>
             </div>
         )
         

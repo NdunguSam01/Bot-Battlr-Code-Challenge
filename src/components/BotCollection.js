@@ -1,4 +1,4 @@
-const BotCollection = ({bots, addBotToArmy}) => 
+const BotCollection = ({bots, addBotToArmy, deleteBot}) => 
 {
     const botData=bots.map(bot => 
         {
@@ -13,6 +13,7 @@ const BotCollection = ({bots, addBotToArmy}) =>
                     <p>Armor: {armor}</p>
                     <p>Bot Class: {bot_class}</p>
                     <p>Catchphrase: {catchphrase}</p>
+                    <button className="deleteBtn" title="Click to delete bot" onClick={()=>deleteBot(bot)}>X</button>
                 </div>
              );
         })
