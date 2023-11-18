@@ -5,7 +5,7 @@ const BotCollection = ({bots, addBotToArmy, deleteBot}) =>
             let {id, name, health, damage, armor, bot_class, catchphrase, avatar_url } = bot
 
             return ( 
-                <div key={id} className="child-flex" onClick={()=>addBotToArmy(bot)}>
+                <div key={id} className="child-flex">
                     <img src={avatar_url} alt={name} />
                     <p>Name: {name}</p>
                     <p>Health: {health}</p>
@@ -13,6 +13,7 @@ const BotCollection = ({bots, addBotToArmy, deleteBot}) =>
                     <p>Armor: {armor}</p>
                     <p>Bot Class: {bot_class}</p>
                     <p>Catchphrase: {catchphrase}</p>
+                    <button onClick={()=>addBotToArmy(bot)}>Add bot to army</button>
                     <button className="deleteBtn" title="Click to delete bot" onClick={()=>deleteBot(bot)}>X</button>
                 </div>
              );
