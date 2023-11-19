@@ -15,8 +15,8 @@ const BotCollection = ({bots, addBotToArmy, deleteBot}) =>
                         <p className="card-text">Bot Class: {bot_class}</p>
                         <p className="card-text">Catchphrase: {catchphrase}</p>
                         <div className="buttons">
-                            <button className="btn btn-success col-12" onClick={()=>addBotToArmy(bot)}>Add bot to army</button>
-                            <button className="btn btn-danger col-12 mt-2" onClick={()=>deleteBot(bot)}>Release from service</button>
+                            <button className="btn btn-success col-12" onClick={()=>addBotToArmy(bot)}>Add bot to your army</button>
+                            <button className="btn btn-danger col-12 mt-2" onClick={()=>deleteBot(bot)}>Release bot from service</button>
                         </div>
                     </div>
                     
