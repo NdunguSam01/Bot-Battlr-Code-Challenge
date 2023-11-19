@@ -1,10 +1,19 @@
+h1
+{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2.5em;
+}
 div.parent-flex
 {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
 }
 div.child-flex
 {
-    border: 2px solid red;
+    border: 2px solid #333;
+    width: 300px;
+    margin: 10px;    
+    flex-basis: 23%;
 }

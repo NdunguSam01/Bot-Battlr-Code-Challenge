@@ -5,14 +5,16 @@ const Army = ({myBotArmy , removeFromArmy}) =>
         let {id, name, health, damage, armor, bot_class, catchphrase, avatar_url } = bot
         
         return(
-            <div key={id} className="child-flex" onClick={()=> removeFromArmy(bot)}>
-                <img src={avatar_url} alt={name} />
-                <p>Name: {name}</p>
-                <p>Health: {health}</p>
-                <p>Damage: {damage}</p>
-                <p>Armor: {armor}</p>
-                <p>Bot Class: {bot_class}</p>
-                <p>Catchphrase: {catchphrase}</p>
+            <div key={id} className="child-flex card" onClick={()=> removeFromArmy(bot)}>
+                <img src={avatar_url} alt={name} className="card-img-top"/>
+                <div className="card-body">
+                    <h5 className="card-title">Name: {name}</h5>
+                    <p className="card-text">Health: {health}</p>
+                    <p className="card-text">Damage: {damage}</p>
+                    <p className="card-text">Armor: {armor}</p>
+                    <p className="card-text">Bot Class: {bot_class}</p>
+                    <p className="card-text">Catchphrase: {catchphrase}</p>
+                </div>
             </div>
         )
         
