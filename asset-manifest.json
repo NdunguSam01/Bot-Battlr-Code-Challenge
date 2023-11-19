@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Bot-Battlr-Code-Challenge/static/css/main.cc5eb433.css",
-    "main.js": "/Bot-Battlr-Code-Challenge/static/js/main.68ebc60d.js",
+    "main.css": "/Bot-Battlr-Code-Challenge/static/css/main.1abb7052.css",
+    "main.js": "/Bot-Battlr-Code-Challenge/static/js/main.655263ed.js",
     "static/js/787.97f0feec.chunk.js": "/Bot-Battlr-Code-Challenge/static/js/787.97f0feec.chunk.js",
     "index.html": "/Bot-Battlr-Code-Challenge/index.html",
-    "main.cc5eb433.css.map": "/Bot-Battlr-Code-Challenge/static/css/main.cc5eb433.css.map",
-    "main.68ebc60d.js.map": "/Bot-Battlr-Code-Challenge/static/js/main.68ebc60d.js.map",
+    "main.1abb7052.css.map": "/Bot-Battlr-Code-Challenge/static/css/main.1abb7052.css.map",
+    "main.655263ed.js.map": "/Bot-Battlr-Code-Challenge/static/js/main.655263ed.js.map",
     "787.97f0feec.chunk.js.map": "/Bot-Battlr-Code-Challenge/static/js/787.97f0feec.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cc5eb433.css",
-    "static/js/main.68ebc60d.js"
+    "static/css/main.1abb7052.css",
+    "static/js/main.655263ed.js"
   ]
 }
