@@ -17,6 +17,13 @@ function App()
       .then(bots => setBotCollections(bots))
   },[])
 
+  useEffect(()=>
+  { 
+    fetch("http://127.0.0.1:3001/botArmy")
+    .then(response => response.json())
+    .then(bots => setMyBotArmy(bots))
+  },[])
+
   //Function to capture the clicked bot and add it to the myBotArmy state
   const addBotToArmy = bot =>
   {
@@ -24,11 +31,22 @@ function App()
 
     if(armyFind === undefined)
     {
-      //Updating the myBotArmy state
-      setMyBotArmy([
-        ...myBotArmy,
-        bot
-      ])
+      fetch("http://localhost:3001/botArmy",
+      {
+        method: "POST",
+        headers:
+        {
+          "Content-Type" : "application/json"
+        },
+        body: JSON.stringify(bot)
+      })
+      .then(response => response.json())
+      .then(addedBot => 
+        {
+          setMyBotArmy([...myBotArmy, addedBot])
+          deleteBot(addedBot)
+        })
+
     }
     else
     {
@@ -60,9 +78,11 @@ function App()
       {
         const botFilter=botCollection.filter(bot => bot.id !== deletedBot.id)
         setBotCollections(botFilter)
-        removeFromArmy(deletedBot)
+        // removeFromArmy(deletedBot)
       })
   }
+
+  
 
   return (
     <>
