@@ -31,6 +31,7 @@ function App()
 
     if(armyFind === undefined)
     {
+      //Doing a POST request to the botArmy endpoint to insert the bot being added to your army
       fetch("http://localhost:3001/botArmy",
       {
         method: "POST",
@@ -43,10 +44,12 @@ function App()
       .then(response => response.json())
       .then(addedBot => 
         {
+          //Updating the state of myBotArmy
           setMyBotArmy([...myBotArmy, addedBot])
+
+          //Passing the bot that has been added to the botArmy endpoint to the function that will delete it from the bots endpoint
           deleteBot(addedBot)
         })
-
     }
     else
     {
@@ -78,11 +81,8 @@ function App()
       {
         const botFilter=botCollection.filter(bot => bot.id !== deletedBot.id)
         setBotCollections(botFilter)
-        // removeFromArmy(deletedBot)
       })
   }
-
-  
 
   return (
     <>
