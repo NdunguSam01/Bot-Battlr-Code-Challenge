@@ -22,7 +22,7 @@ function App()
   {
     const armyFind=myBotArmy.find(myBot => myBot.id === bot.id)
 
-    if(!armyFind)
+    if(armyFind === undefined)
     {
       //Updating the myBotArmy state
       setMyBotArmy([
@@ -32,7 +32,7 @@ function App()
     }
     else
     {
-     alert("Bot exists in your bot collection")
+     alert("Bot has already been added to your bot collection")
     }
   }
 
