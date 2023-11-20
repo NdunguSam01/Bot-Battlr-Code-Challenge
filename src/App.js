@@ -12,14 +12,14 @@ function App()
   //Fetching data from the API
   useEffect(()=>
   {
-    fetch("http://127.0.0.1:3001/bots")
+    fetch("https://bot-battlr-code-challenge.onrender.com/bots")
       .then(response => response.json())
       .then(bots => setBotCollections(bots))
   },[])
 
   useEffect(()=>
   { 
-    fetch("http://127.0.0.1:3001/botArmy")
+    fetch("https://bot-battlr-code-challenge.onrender.com/botArmy")
     .then(response => response.json())
     .then(bots => setMyBotArmy(bots))
   },[])
@@ -32,7 +32,7 @@ function App()
     if(armyFind === undefined)
     {
       //Doing a POST request to the botArmy endpoint to insert the bot being added to your army
-      fetch("http://localhost:3001/botArmy",
+      fetch("https://bot-battlr-code-challenge.onrender.com/botArmy",
       {
         method: "POST",
         headers:
@@ -72,7 +72,7 @@ function App()
   {
     //Making a delete request to the server
 
-    fetch(`http://localhost:3001/bots/${deletedBot.id}`,
+    fetch(`https://bot-battlr-code-challenge.onrender.com/bots/${deletedBot.id}`,
       {
         method: "DELETE",
       })
