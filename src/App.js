@@ -60,11 +60,20 @@ function App()
   //Function to remove bot from army
   const removeFromArmy = bot =>
   {
-    //Filtering through the myBotArmy variable and returning all elements that are not equal to the bot passed in
-    const armyFilter=myBotArmy.filter(army => army.id !== bot.id)
+    fetch(`https://bot-battlr-code-challenge.onrender.com/botArmy/${bot.id}`,
+      {
+        method: "DELETE",
+      })
+      .then(response => response.json())
+      .then(()=>
+      {
+        //Filtering through the myBotArmy variable and returning all elements that are not equal to the bot passed in
+        const armyFilter=myBotArmy.filter(army => army.id !== bot.id)
 
-    //Updating the state to equal the value of the filtered elements
-    setMyBotArmy(armyFilter)
+        //Updating the state to equal the value of the filtered elements
+        setMyBotArmy(armyFilter)
+      })
+
   }
 
   //Function to delete bot
