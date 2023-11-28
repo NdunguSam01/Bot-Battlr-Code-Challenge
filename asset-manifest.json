@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Bot-Battlr-Code-Challenge/static/css/main.cc5eb433.css",
-    "main.js": "/Bot-Battlr-Code-Challenge/static/js/main.1ecdaf13.js",
+    "main.js": "/Bot-Battlr-Code-Challenge/static/js/main.033370b0.js",
     "static/js/787.97f0feec.chunk.js": "/Bot-Battlr-Code-Challenge/static/js/787.97f0feec.chunk.js",
     "index.html": "/Bot-Battlr-Code-Challenge/index.html",
     "main.cc5eb433.css.map": "/Bot-Battlr-Code-Challenge/static/css/main.cc5eb433.css.map",
-    "main.1ecdaf13.js.map": "/Bot-Battlr-Code-Challenge/static/js/main.1ecdaf13.js.map",
+    "main.033370b0.js.map": "/Bot-Battlr-Code-Challenge/static/js/main.033370b0.js.map",
     "787.97f0feec.chunk.js.map": "/Bot-Battlr-Code-Challenge/static/js/787.97f0feec.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cc5eb433.css",
-    "static/js/main.1ecdaf13.js"
+    "static/js/main.033370b0.js"
   ]
 }
