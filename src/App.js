@@ -47,8 +47,6 @@ function App()
           //Updating the state of myBotArmy
           setMyBotArmy([...myBotArmy, addedBot])
 
-          //Passing the bot that has been added to the botArmy endpoint to the function that will delete it from the bots endpoint
-          deleteBot(addedBot)
         })
     }
     else
