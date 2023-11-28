@@ -27,31 +27,42 @@ function App()
   //Function to capture the clicked bot and add it to the myBotArmy state
   const addBotToArmy = bot =>
   {
-    const armyFind=myBotArmy.find(myBot => myBot.id === bot.id)
+    const armyFind=myBotArmy.find(myBot => myBot.id === bot.id )
+    const botClassCheck=myBotArmy.find(myBot => myBot.bot_class === bot.bot_class)
+
+    // console.log(armyFind)
+    // console.log(botClassCheck)
 
     if(armyFind === undefined)
     {
-      //Doing a POST request to the botArmy endpoint to insert the bot being added to your army
-      fetch("https://bot-battlr-code-challenge.onrender.com/botArmy",
+      if(botClassCheck === undefined)
       {
-        method: "POST",
-        headers:
+        //Doing a POST request to the botArmy endpoint to insert the bot being added to your army
+        fetch("https://bot-battlr-code-challenge.onrender.com/botArmy",
         {
-          "Content-Type" : "application/json"
-        },
-        body: JSON.stringify(bot)
-      })
-      .then(response => response.json())
-      .then(addedBot => 
-        {
-          //Updating the state of myBotArmy
-          setMyBotArmy([...myBotArmy, addedBot])
-
+          method: "POST",
+          headers:
+          {
+            "Content-Type" : "application/json"
+          },
+          body: JSON.stringify(bot)
         })
+        .then(response => response.json())
+        .then(addedBot => 
+          {
+            //Updating the state of myBotArmy
+            setMyBotArmy([...myBotArmy, addedBot])
+
+          })
+      }
+      else
+      {
+        alert("Bot with the same class already exists in your bot collection")
+      }
     }
     else
     {
-     alert("Bot has already been added to your bot collection")
+      alert("Bot has already been added to your bot collection")
     }
   }
 
