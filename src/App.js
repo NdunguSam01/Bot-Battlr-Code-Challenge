@@ -48,7 +48,7 @@ function App()
           setMyBotArmy([...myBotArmy, addedBot])
 
           //Passing the bot that has been added to the botArmy endpoint to the function that will delete it from the bots endpoint
-          deleteBot(addedBot)
+          // deleteBot(addedBot)
         })
     }
     else
@@ -80,7 +80,6 @@ function App()
   const deleteBot = deletedBot =>
   {
     //Making a delete request to the server
-
     fetch(`https://bot-battlr-code-challenge.onrender.com/bots/${deletedBot.id}`,
       {
         method: "DELETE",
@@ -90,6 +89,7 @@ function App()
       {
         const botFilter=botCollection.filter(bot => bot.id !== deletedBot.id)
         setBotCollections(botFilter)
+        removeFromArmy(deletedBot)
       })
   }
 
