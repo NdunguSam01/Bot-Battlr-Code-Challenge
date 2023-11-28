@@ -53,6 +53,8 @@ function App()
             //Updating the state of myBotArmy
             setMyBotArmy([...myBotArmy, addedBot])
 
+            //Passing the added bot as a parameter to the function that will delete it from the bot collection
+            deleteBot(addedBot)
           })
       }
       else
@@ -98,7 +100,6 @@ function App()
       {
         const botFilter=botCollection.filter(bot => bot.id !== deletedBot.id)
         setBotCollections(botFilter)
-        removeFromArmy(deletedBot)
       })
   }
 
