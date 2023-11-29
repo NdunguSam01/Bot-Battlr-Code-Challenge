@@ -68,6 +68,30 @@ function App()
     }
   }
 
+  //Function to add bot to the bot collection
+  const addBotToCollection = bot =>
+  {
+    console.log(bot)
+
+    //Doing a POST request to the bots endpoint to restore the bot that was removed from the botArmy
+    fetch("https://bot-battlr-code-challenge.onrender.com/bots",
+    {
+      method: "POST",
+      headers:
+      {
+        "Content-Type" : "application/json"
+      },
+      body: JSON.stringify(bot)
+    })
+    .then(response => response.json())
+    .then(addedBot => 
+      {
+        //Updating the state of bot collection
+        setBotCollections([...botCollection, addedBot])
+
+      })
+  }
+
   //Function to remove bot from army
   const removeFromArmy = bot =>
   {
@@ -83,6 +107,8 @@ function App()
 
         //Updating the state to equal the value of the filtered elements
         setMyBotArmy(armyFilter)
+
+        addBotToCollection(bot)
       })
 
   }
